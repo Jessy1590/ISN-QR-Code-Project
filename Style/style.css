@@ -1,0 +1,212 @@
+@font-face {
+font-family: 'iPierre';
+src: url('../theboldfont.ttf');
+font-weight: normal;
+font-style: normal;
+}
+
+@media only screen 
+and (min-device-width : 1px) 
+and (max-device-width : 1000px) {
+body {
+    background-color: black;
+}
+.app{
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    left: 5%;
+    right: 5%;
+}
+.cadre {
+    position: relative;
+    margin: auto; 
+    border:3px solid black;
+    top: 10px;
+    width:210px;
+    height:210px;
+}
+IMG.displayed {
+    display: block;
+    max-width:150px;
+    max-height:150px;
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    top: -15%;   
+}
+IMG.canevas{
+    display: block;
+    max-width:210px;
+    max-height:210px;
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.displayed {
+    animation-duration: 1.5s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+}
+.container {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: 120px;
+    height: 560px;
+    background-color: #fff;
+    object-position: 0px 800px;
+    box-shadow: 0px 0px 10px #000;
+}
+.bandeauinfo {
+    visibility: hidden;
+}
+.container2 {
+    visibility: hidden;
+}
+button {
+    position: relative;
+    margin: auto; 
+    border:3px solid black;
+} 
+.footer {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    margin:auto;
+    bottom: -90px;
+    text-align: center;
+}
+}
+@media only screen 
+and (min-width : 1000px) {
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+button {
+    position: relative;
+    margin: auto; 
+    border:3px solid black;
+} 
+.app{
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    left: 40%;
+    right: 40%;
+}
+IMG.canevas{
+    display: block;
+    max-width:210px;
+    max-height:210px;
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.cadre {
+    margin: auto;
+    border:3px solid black;
+    width:210px;
+    height:210px;
+}
+IMG.displayed {
+    display: block;
+    max-width:400px;
+    max-height:400px;
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    top: -30%;
+    
+}
+.displayed {
+    animation-duration: 1.5s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+}
+.container {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: 310px;
+    height: 750px;
+    line-height: 30px;
+    background-color: #fff;
+    object-position: 0px 800px;
+    box-shadow: 0px 0px 10px #000;
+}
+.bandeauinfo {
+    position: absolute;
+    z-index: 0;
+    left: 10px;
+    right: 50px;
+    top: -15px;
+    animation-duration: 20s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+}
+.container2 {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0px;
+    height: 40px;
+    line-height: 30px;
+    background-color: #fff;
+    object-position: 0px 800px;
+    box-shadow: 0px 0px 10px #000;
+}
+}
+
+h2 {
+    color: #000;
+    font-family: "iPierre";
+}
+a {
+    font-size: 1em;
+    color: #052A3D;
+    font-family: "iPierre";
+}
+a:hover {
+    color: #052A3D;
+}
+
+input {
+    border: 3px solid;
+    color: #000;    
+}  
+input:hover {
+    color: grey;
+}
+@keyframes slidein {
+  0% {
+    margin-left: 90%;
+    width: 100%; 
+  }
+
+  100% {
+    margin-left: -50%;
+    width: 100%;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+    100% {
+    transform: scale(1);
+  }
+}

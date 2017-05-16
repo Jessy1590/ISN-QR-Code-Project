@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+	<script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+	<link rel="icon" type="image/png" href="Xtra/icon.png">
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Decode and Code Alphanumerics QR Code">
+    <meta name="author" content="Pierre Ranwez Jessy Sengulen Emeric Thebaud Nicolas Pedro">
+	<title>QR Code</title>
+</head>
+<body>
+<div class="container2">
+	<div class="bandeauinfo"><h2>Bienvenue! Pret à coder un qr code? Essayez tout de suite !</h2></div>
+</div>
+<div class="container">
+    <IMG class="displayed" src="Xtra/LogoISNQr.png"/>
+    <div class="app">
+    	<h2>Codez ici votre QR Code! </h2>
+		<a>Texte </a>
+		<input id="myText" value="Votre texte ici" type="text">
+		<button onclick="myFunction()"><a>Valider</a></button>
+	<div class="cadre">
+		<canvas id="myCanvas" width="210" height="210" style="border:1px solid #d3d3d3;"><img class="canevas" src="Xtra/LogoISNQr.png"></canvas>
+		<script type="text/javascript" src="qr.js"></script>
+    </div>
+    </br>
+	<button onclick="download_image()"><a>Télécharger</a></button>
+	<div class="footer"><a>Copyright(C) Pierre R. Jessy S. Nicolas P. Emeric T. All rights reserved.</a></div>
+	</div>
+</div>
+</body>
+</html>
