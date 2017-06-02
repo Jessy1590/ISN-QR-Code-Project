@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script><!--On importe JQuerey pour des gadjets-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script><!-- On importe le code de téléchargement pour le png --> 
+    <script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+	<script type="text/javascript" src="Javascript/Pierre JS Codage.js"></script>
+	<link rel="icon" type="image/png" href="Xtra/icon.png"><!-- Paramétrage de la page icon, css, nom, auteurs, description et titre--> 
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Decode and Code QR Code">
+    <meta name="author" content="Pierre Ranwez, Jessy Sengulen, Emeric Thebaud, Nicolas Pedro">
+	<title>QR Code</title>
+</head>
+<body>
+    <div class="charg"></div><!--Chargement de page-->
+	<div class="container2"><!-- Bandeau déroulant pour version PC : emplacement --> 
+		<div class="bandeauinfo"><h2>Bienvenue! Pret à coder un qr code? Essayez tout de suite !</h2></div><!-- animation du bandeau --> 
+	</div>
+	<div class="container"><!-- Boite centrale --> 
+    	<input type="button" name="lien1" value="DECODEZ VOTRE QRCODE" onclick="self.location.href='decodage.html'" size="20px" style="font-family: iPierre; color: #000000; font-weight: normal">
+		<input type="button" name="lien1" value="Comment fonctionne un Qr Code" onclick="self.location.href='Comment_fonctionne_un_QR_Code.html'" size="20px" style="font-family: iPierre; color: #000000; font-weight: normal">
+		<IMG class="displayed" src="Xtra/LogoISNQr.png"/><!-- Logo annimé --> 
+    	<div class="app">
+    		<h2>Codez ici votre QR Code! </h2>
+			<a>Texte </a>
+			<input id="myText" value="Votre texte ici"  maxlength="24" onkeyup="myFunction()" onkeypress="clock()" type="text"><!-- Entrée de texte en direction du JavaScript grace à "id=" et lancement de la fonction --> 
+			<div class="cadre">
+				<canvas id="myCanvas" width="210" height="210" style="border:1px solid #d3d3d3;"><img class="canevas" src="Xtra/LogoISNQr.png"></canvas><!-- Zone de dessin recevant le QRCode --> 
+				<script type="text/javascript" src="Javascript/Jessy JS Codage.js"></script><!-- Lien vers le JavaScript --> 
+    		</div>
+    	</br>
+    	<a id="date"></a>
+    	</br>
+		<button onclick="download_image()"><a>Télécharger</a></button><!-- Bouton lançant la fonction JavaScript de téléchargement --> 
+	</div>
+		<div class="footer"><a>Copyright (C) Pierre R. Jessy S. Nicolas P. Emeric T. Touts droits réservés.</a></div><!-- Bas de page  auteurs et droits -->
+</div>
+</body>
+</html>

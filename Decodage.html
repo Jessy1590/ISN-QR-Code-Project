@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script><!--On importe JQuerey pour des gadjets-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script><!-- On importe le code de téléchargement pour le png --> 
+    <script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+	<script type="text/javascript" src="Javascript/Pierre JS Codage.js"></script>
+	<link rel="icon" type="image/png" href="Xtra/icon.png"><!-- Paramétrage de la page icon, css, nom, auteurs, description et titre--> 
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Decode and Code QR Code">
+    <meta name="author" content="Pierre Ranwez, Jessy Sengulen, Emeric Thebaud, Nicolas Pedro">
+	<title>QR Code</title>
+</head>
+<body>
+<div class="charg"></div><!--Chargement de page-->
+	<div class="container2"><!-- Bandeau déroulant pour version PC : emplacement --> 
+		<div class="bandeauinfo"><h2>Bienvenue! Pret à decoder un qr code? Essayez tout de suite !</h2></div><!-- animation du bandeau --> 
+	</div>
+	<div class="decodo">
+		<canvas id="blanc" width='130' height='250'></canvas>
+		<input type="file" id="imageLoader" name="imageLoader"/> <!--On upload l'image-->
+		<button onclick="decrypt()">Lancer le Decodage</button><!--On lance la fonction--></br>
+		<center><canvas id="imageCanvas" width="210" height="210" style="border:1px solid #000000"></canvas><!--On affiche l'image-->
+		<script type="text/javascript" src="Javascript/Decodage_tous.js"></script>
+		<canvas id="Canvas" width="210" height="210" style="border:1px solid #000000;">
+		<script type="text/javascript" src="Javascript/Decodage_tous.js"></script>
+		</canvas></br>
+		<script type="text/javascript" src="Javascript/Decodage_tous.js"></script>
+		<canvas id="CanvasText" width="700" height="130" style="border:3px solid #000000;">
+		</canvas>
+		</center>
+	</div>
+	<!-- Boite centrale --> 
+	<div class="container">
+	  <input type="button" name="lien1" value="DECODEZ VOTRE QRCODE" onclick="self.location.href='index.html'" size="20px" style="font-family: iPierre; color: #000000; font-weight: normal">
+	<input type="button" name="lien1" value="Comment fonctionne un Qr Code" onclick="self.location.href='Comment_fonctionne_un_QR_Code.html'" size="20px" style="font-family: iPierre; color: #000000; font-weight: normal">
+	<IMG class="displayed" src="Xtra/LogoISNQr.png"/><!-- Logo annimé -->
+	<div class="app">
+    	<h2>Décodez ici votre QR Code! </h2>
+	</div>
+	<div class="footer"><a>Copyright (C) Pierre R. Jessy S. Nicolas P. Emeric T. Touts droits réservés.</a></div><!-- Bas de page  auteurs et droits -->
+</div>
+	</body>
+</html>

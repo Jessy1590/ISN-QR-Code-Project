@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script><!--On importe JQuerey pour des gadjets-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script><!-- On importe le code de téléchargement pour le png --> 
+    <script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+	<script type="text/javascript" src="Javascript/Pierre JS Codage.js"></script>
+	<link rel="icon" type="image/png" href="Xtra/icon.png"><!-- Paramétrage de la page icon, css, nom, auteurs, description et titre--> 
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Decode and Code QR Code">
+    <meta name="author" content="Pierre Ranwez, Jessy Sengulen, Emeric Thebaud, Nicolas Pedro">
+	<title>QR Code</title>
+</head>
+<body>
+    <div class="charg"></div><!--Chargement de page-->
+	<div class="container2"><!-- Bandeau déroulant pour version PC : emplacement --> 
+		<div class="bandeauinfo"><h2>Bienvenue! Pret à coder un qr code? Essayez tout de suite !</h2></div><!-- animation du bandeau --> 
+	</div>
+	<div class="container4"><!-- Boite centrale --> 
+    	<input type="button" name="lien1" value="CODEZ VOTRE QRCODE" onclick="self.location.href='index.html'" size="20px" style="font-family: iPierre; color: #000000; font-weight: normal"></br>
+		<input type="button" name="lien2" value="DECODEZ VOTRE QRCODE" onclick="self.location.href='decodage.html'" size="20px" style="font-family: iPierre; color: #000000; font-weight: normal">
+		<IMG class="displayed" src="Xtra/LogoISNQr.png"/><!-- Logo annimé --> 
+    </div>	
+	<div class="container3">
+<center><p1>Comment fonctionne un QR Code ?<br /></p1></center>
+<br />
+<p4>Un QR Code est bas&eacute; sur un langage en bits. Ce dernier permet de stocker un maximum de donn&eacute;es dans une image. Elle pourra alors permettre de transf&eacute;rer les donn&eacute;es d&#039;une personne &agrave; une autre et ainsi de diffuser des mots, num&eacute;ros de t&eacute;l&eacute;phone, adresses, documents et autre &agrave; travers une image qui pourra &ecirc;tre scanner par tous.<br />
+Mais comment &agrave; marche ?<br /></p4>
+<br />
+<p2>Le QR Code r&eacute;unit plusieurs principes :</p2><br />
+<br />
+<p3>Premier principe :<br /></p3>
+ <p4>Le QR Code a une anatomie qui s&#039;adapte &agrave; la taille de l&#039;image. Cette derni&egrave;re  est compos&eacute; comme indiqu&eacute; sur l&#039;image ci-contre de plusieurs informations comme 3 patterns ainsi que des alignements en fonction de la taille et un rep&egrave;re &quot;timing&quot; qui permet la reconnaissance de la taille. Il y a aussi des donn&eacute;es sur la version, et sur les informations formative du QR Code comme le masque utilis&eacute; ou autre information importante.<br /></p4>
+<br />
+<p3>Second principe :<br /></p3>
+<p4>Le QR Code a une fonction de codage en 3 &eacute;tapes. <br />
+La premi&egrave;re &eacute;tape est une &eacute;tape de codage binaire. Le codage binaire est un codage de bits correspondant &agrave; un chiffre binaire(0 ou 1) et une unit&eacute; de mesure. Celui-ci correspond a un langage machine. Il est cod&eacute; comme expliqu&eacute; dans les images ci-contre.<br />
+<br />
+Mais avant celles-ci nous devons d&eacute;cid&eacute; le mode de codage par exemple le mode octet (c&#039;est-&agrave;-dire du binaire utilisant une table de codage appel&eacute;s ASCII), ou le mode num&eacute;rique codant seulement les nombre ou un codage sp&eacute;cial alpha num&eacute;rique codant lettres en majuscules et nombres. Gr&acirc;ce &agrave; ses informations cr&eacute;e l&#039;image du code binaire.<br />
+<br />
+La Seconde &eacute;tape est une &eacute;tape de donn&eacute;es qui consiste &agrave; calculer la longueur du mot et ainsi traduire et  calculer son octet et &agrave; l&#039;aide des informations trouv&eacute; si dessus, ajouter un module 4*4 indiquant le module de d&eacute;marrage en fonction du mode choisi et un module 4*4 de finale 0,0,0,0.<br />
+<br />
+La derni&egrave;re &eacute;tape consiste &agrave; cr&eacute;er gr&acirc;ce au code pr&eacute;c&eacute;dent, un code d&#039;erreur qui permet d&#039;am&eacute;liorer la lisibilit&eacute; du code et sa traduction lors du d&eacute;codage. Ce code implique une tr&egrave;s bonne connaissance math&eacute;matique et un tr&egrave;s bonne connaissance informatique sur la redondance et la division de fonction polynomiale &agrave; l&#039;aide d&#039;indice alpha.<br /></p4>
+<br />
+<p3>Troisi&egrave;me et Dernier Principe :<br /></p3>
+<br />
+<p4>Le QR Code va pour finir &ecirc;tre cr&eacute;er. Il va d&#039;abord ajouter les donn&eacute;es du premier principe et ensuite ajouter les donn&eacute;es du second principe en suivant une r&egrave;gle de positionnement comme montrer ci-contre. <br />
+<br />
+Pour finir, pour am&eacute;liorer la diversit&eacute; am&eacute;liorer la lecture, le QR Code va &ecirc;tre masqu&eacute;, c&#039;est-&agrave;-dire on va lui appliqu&eacute;s un masque qui correspondra au score de p&eacute;nalit&eacute;s le plus faible mobilisant une meilleur redondance.  Tout cela est montr&eacute; dans les images ci-contre.<br /></p4>
+<br />
+<br />
+<p2>Pour le d&eacute;codage</p2></br>
+<p4>Lors du d&eacute;codage les principes vont &ecirc;tre invers&eacute; car il va falloir d&#039;abord lire les donn&eacute;es du principe 1 puis d&eacute;masqu&eacute; le code, et le traduire &agrave; l&#039;envers du principe 2 et v&eacute;rifier avec le code d&#039;erreur. Pour enfin trouver la r&eacute;ponse et le mot de base voulu &ecirc;tre transmis par le QR Code</p4>
+		</div>
+		</div>
+		<div class='anatomie'>
+		<figure>
+		<img src="Image/anatomie.png" alt="" />
+		<center><figcaption>Position des donn&eacutees de base du QR Code</figcaption>
+		</figure></div>
+		<div class='anatomie2'>
+		<figure>
+		<img src="Image/anatomie2.png" alt="" />
+		<center><figcaption>Explication des donn&eacutees de base</figcaption>
+		</figure></div>
+		<div class='mask'>
+		<figure>
+		<img src="Image/mask.png" alt="" />
+		<center><figcaption>Explication des p&eacutenalit&egraves</figcaption>
+		</figure></div>
+		<div class='mask2'>
+		<figure>
+		<img src="Image/mask2.png" alt="" />
+		<center><figcaption>Explication du masquage</figcaption>
+		</figure></div>
+		<div class='position'>
+		<figure>
+		<img src="Image/position.png" alt="" />
+		<center><figcaption>Explication du positionnement simple</figcaption>
+		</figure></div>
+		<div class='position2'>
+		<figure>
+		<img src="Image/position2.png" alt="" />
+		<center><figcaption>Explication du positionnement complexe</figcaption>
+		</figure></div>
+		<div class='binaire'>
+		<figure>
+		<img src="Image/binaire.png" alt="" />
+		<center><figcaption>Nombre binaire de base en 4 Bits</figcaption>
+		</figure></div>
+		<div class='binaire2'>
+		<figure>
+		<img src="Image/binaire2.png" alt="" />
+		<center><figcaption>Explication du calcul binaire</figcaption>
+		</figure></div>
+		<div class='ascii'>
+		<figure>
+		<img src="Image/ascii.jpg" alt="" />
+		<center><figcaption>Table de codage utilis&eacute</figcaption>
+		</figure></div>
+		<div class='reedsolomoncode'>
+		<figure>
+		<img src="Image/reed solomon code.jpg" alt="" />
+		<center><figcaption>Explication du reed solomon code</figcaption>
+		</figure></div>
+		<div class="footer2"><a>Copyright (C) Pierre R. Jessy S. Nicolas P. Emeric T. Touts droits r&eacuteserv&eacutes.</a></div><!-- Bas de page  auteurs et droits -->
+</div>
+</body>
+</html>
